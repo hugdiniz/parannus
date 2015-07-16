@@ -1,13 +1,15 @@
 package model.vo;
 
-import model.entity.Objetivo;
+import model.entity.abstractClass.*;
 
-public class SolicitacaoVO 
+public class SolicitacaoVO extends VO
 {
-	private String sugestao;
-	private String impacto;
-	private String tipo;
-	private Objetivo objetivo;
+	private String sugestao = null;
+	private String impacto = null;
+	private String tipo = null;
+	
+	
+	
 	public String getSugestao()
 	{
 		return sugestao;
@@ -32,14 +34,6 @@ public class SolicitacaoVO
 	{
 		this.tipo = tipo;
 	}
-	public Objetivo getObjetivo()
-	{
-		return objetivo;
-	}
-	public void setObjetivo(Objetivo objetivo)
-	{
-		this.objetivo = objetivo;
-	}
-	
+		
 	
 }

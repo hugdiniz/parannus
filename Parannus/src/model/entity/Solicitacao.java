@@ -2,9 +2,12 @@ package model.entity;
 
 import java.util.List;
 
+import model.entity.abstractClass.Entity;
 
 
-public class Solicitacao implements Entity {
+
+public class Solicitacao extends Entity
+{
 
 	private String sugestao;
 
@@ -19,7 +22,7 @@ public class Solicitacao implements Entity {
 		this.sugestao = sugestao;
 		this.impacto = impacto;
 		this.tipo = tipo;
-		this.objetivo = objetivo;
+		//this.objetivo = objetivo;
 	}
 	public void gerenciarSolicitacao() 
 	{

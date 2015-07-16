@@ -2,8 +2,11 @@ package model.entity;
 
 import java.util.List;
 
+import model.entity.abstractClass.Entity;
 
-public class Objetivo implements Entity {
+
+public class Objetivo extends Entity
+{
 
 	private String objetivo;
 
@@ -15,7 +18,8 @@ public class Objetivo implements Entity {
 	 * 
 	 *  
 	 */
-	public void cadastrar(Entity entidade) {
+	public void cadastrar(Entity entidade)
+	{
 
 	}
 
@@ -25,7 +29,8 @@ public class Objetivo implements Entity {
 	/**
 	 * @see Diagrama de Classes.br.ufrrj.im.dominio.Entity#editar(Diagrama de Classes.br.ufrrj.im.dominio.Entity)
 	 */
-	public void editar(Entity novaEntidade) {
+	public void editar(Entity novaEntidade)
+	{
 
 	}
 

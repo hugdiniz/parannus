@@ -1,5 +1,6 @@
 package model.service;
 
+import java.sql.SQLException;
 import java.util.Collection;
 
 import model.dao.DAOSolicitacao;
@@ -27,7 +28,7 @@ public class ServiceHandler {
 		return null;
 	}
 	
-	public Collection recuperarSolicitacaos(SolicitacaoVO solicitacaoVO)
+	public Collection recuperarSolicitacaos(SolicitacaoVO solicitacaoVO) throws ClassNotFoundException, SQLException
 	{
 		DAOSolicitacao daoSolicitacao = DAOSolicitacao.getInstance();
 		return daoSolicitacao.recuperar(solicitacaoVO);

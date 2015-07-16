@@ -2,9 +2,12 @@ package model.entity;
 
 import java.util.List;
 
+import model.entity.abstractClass.Entity;
 
 
-public class Usuario implements Entity {
+
+public class Usuario extends Entity
+{
 
 	private String nome;
 

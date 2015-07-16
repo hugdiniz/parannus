@@ -3,12 +3,12 @@ package model.entity;
 import java.util.Date;
 import java.util.List;
 
+import model.entity.abstractClass.Entity;
 import model.enumerado.Status;
 
 
-	
-
-public class Atividade implements Entity {
+public class Atividade extends Entity
+{
 
 	private Date dataCriacao;
 
@@ -20,11 +20,13 @@ public class Atividade implements Entity {
 
 	private Usuario usuario;
 
-	public void enviarFeedback(String feedback) {
+	public void enviarFeedback(String feedback)
+	{
 
 	}
 
-	public void detalaharAtividade() {
+	public void detalaharAtividade()
+	{
 
 	}
 

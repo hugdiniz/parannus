@@ -1,4 +1,4 @@
-package view;
+package controller;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
@@ -10,8 +10,10 @@ import model.entity.abstractClass.*;
 import model.service.ServiceHandler;
 import model.vo.SolicitacaoVO;
 
-public class ViewAdicionarSugestão {
-	public ViewAdicionarSugestão() {
+public class ViewAdicionarSugestão 
+{
+	public ViewAdicionarSugestão()
+	{
 		// TODO Auto-generated constructor stub
 	}
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException 

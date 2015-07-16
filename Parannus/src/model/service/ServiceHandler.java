@@ -1,15 +1,16 @@
 package model.service;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.Collection;
 
-import model.dao.DAOSolicitacao;
-import model.vo.AtividadeVO;
+import model.dao.DAO;
+import model.entity.Solicitacao;
+import model.exception.ServiceException;
 import model.vo.SolicitacaoVO;
-import model.vo.UsuarioVO;
-import sun.security.jca.GetInstance;
 
-public class ServiceHandler {
+public class ServiceHandler 
+{
 	
 	private static ServiceHandler serviceHandler;
 	
@@ -20,23 +21,49 @@ public class ServiceHandler {
 			serviceHandler = new ServiceHandler();
 		}
 		return serviceHandler;
+	}	
+	
+	public Collection recuperarSolicitacaos(SolicitacaoVO solicitacaoVO) throws ServiceException
+	{
+		Collection solicitacaos = null;
+		try
+		{
+			solicitacaos = DAO.getInstance().search(solicitacaoVO, Solicitacao.class);
+		}
+		catch (SQLException | ClassNotFoundException |NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+		{			
+			e.printStackTrace();
+			throw new ServiceException("erro.service.handler.recuperar.solicitacaos.dao.search");
+		}
+		return solicitacaos;
+		
 	}
 	
-	
-	public Collection recuperarAtividades(AtividadeVO atividadeVO)
+	public Solicitacao recuperarSolicitacao(SolicitacaoVO solicitacaoVO) throws ServiceException
 	{
-		return null;
+		Collection solicitacaos = null;
+		solicitacaos = recuperarSolicitacaos(solicitacaoVO);		
+		if (solicitacaos != null && !solicitacaos.isEmpty())
+		{
+			return (Solicitacao) solicitacaos.iterator().next();
+		}
+		else
+		{
+			return null;
+		}	
 	}
 	
-	public Collection recuperarSolicitacaos(SolicitacaoVO solicitacaoVO) throws ClassNotFoundException, SQLException
+	public void manterSolicitacao(Solicitacao solicitacao) throws ServiceException
 	{
-		DAOSolicitacao daoSolicitacao = DAOSolicitacao.getInstance();
-		return daoSolicitacao.recuperar(solicitacaoVO);
-	}
-	
-	public Collection recuperarUsuarios(UsuarioVO solicitacaoVO)
-	{
-		return null;
+		try
+		{
+			DAO.getInstance().insertOrUpdate(solicitacao);
+		}
+		catch (ClassNotFoundException | SQLException e)
+		{			
+			e.printStackTrace();
+			throw new ServiceException("erro.service.handler.recuperar.solicitacaos.dao.search");
+		}
 	}
 
 }

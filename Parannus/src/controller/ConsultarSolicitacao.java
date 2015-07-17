@@ -9,15 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.DAO;
-import model.entity.Solicitacao;
 import model.exception.ServiceException;
 import model.service.ServiceHandler;
 import model.vo.SolicitacaoVO;
 
-@WebServlet("")
-public class AreaTrabalho extends HttpServlet
-{	
+@WebServlet("/ConsultarSolicitacao")
+public class ConsultarSolicitacao extends HttpServlet
+{
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -46,8 +44,19 @@ public class AreaTrabalho extends HttpServlet
 				//request.getRequestDispatcher("VerDepartamento").forward(request,response);
 				break;
 			case "":
-			default:			
-				request.getRequestDispatcher("WEB-INF/areaTrabalho.jsp").forward(request,response);			
+			default:
+				Collection solicitacaos =	null;
+				
+				try
+				{
+					solicitacaos = ServiceHandler.getInstance().recuperarSolicitacaos(new SolicitacaoVO());
+				}catch (ServiceException e)
+				{
+					e.printStackTrace();
+				}
+				
+				request.setAttribute("solicitacaos", solicitacaos);
+				request.getRequestDispatcher("WEB-INF/consultarSolicitacao.jsp").forward(request,response);			
 		}
 	}
 }

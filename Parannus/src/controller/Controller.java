@@ -41,10 +41,15 @@ public abstract class Controller extends HttpServlet
 		}
 		else
 		{
-			String nome = usuario.getNome();
-			request.setAttribute("usuarioNome", nome);
+			adicionarUsuario(request, usuario);
 			action(request, response);
 		}
 
+	}
+	protected void adicionarUsuario(HttpServletRequest request,Usuario usuario)
+	{
+		String nome = usuario.getNome();
+		request.setAttribute("usuarioNome", nome);
+		request.setAttribute("perfil", usuario.getPerfil().name());
 	}
 }

@@ -41,8 +41,7 @@ public class LogarUsuario extends Controller
 			try
 			{
 				Usuario usuario = LoginHandler.getInstance().Logar(usuarioVO,request);
-				String nome = usuario.getNome();
-				request.setAttribute("usuarioNome", nome);
+				adicionarUsuario(request, usuario);
 				
 				request.getRequestDispatcher("").forward(request,response);
 				

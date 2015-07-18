@@ -80,5 +80,8 @@ public class Usuario extends Entity
 	{
 		return login;
 	}
-	
+	public PerfilEnum getPerfil()
+	{
+		return perfil;
+	}
 }

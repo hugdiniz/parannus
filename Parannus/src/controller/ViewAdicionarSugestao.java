@@ -18,9 +18,9 @@ import model.vo.ObjetivoVO;
 import model.vo.SolicitacaoVO;
 import model.vo.UsuarioVO;
 
-public class ViewAdicionarSugestão 
+public class ViewAdicionarSugestao 
 {
-	public ViewAdicionarSugestão()
+	public ViewAdicionarSugestao()
 	{
 		// TODO Auto-generated constructor stub
 	}

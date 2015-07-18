@@ -6,7 +6,7 @@
 	
 		<div class="menuSecundario">
 			<span style="font-size:20px;">Consulta Solicitação</span>
-			<a style="margin-left: 60%; "class="btn btn-primary collapsed">Criar Solicitação</a>
+			<a style="margin-left: 60%; "class="btn btn-primary collapsed" href="/Parannus/CriarSolicitacao" >Criar Solicitação</a>
 		<hr style="margin-top: 7px;	">
 		</div>								
 		<div class="camposBotao">

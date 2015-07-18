@@ -6,11 +6,9 @@ import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
 
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
 import model.dao.DAO;
 import model.entity.Usuario;
 import model.exception.LoginException;
-import model.exception.ServiceException;
 import model.exception.UsuarioException;
 import model.vo.UsuarioVO;
 

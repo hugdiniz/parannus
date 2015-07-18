@@ -1,10 +1,8 @@
 package model.entity;
 
 import java.util.Date;
-import java.util.List;
-
 import model.entity.abstractClass.Entity;
-import model.enumerado.Status;
+import model.enumerado.StatusEnum;
 
 
 public class Atividade extends Entity
@@ -16,35 +14,8 @@ public class Atividade extends Entity
 
 	private Date dataFim;
 
-	private Status status;
+	private StatusEnum status;
 
 	private Usuario usuario;
-
-	public void enviarFeedback(String feedback)
-	{
-
-	}
-
-	public void detalaharAtividade()
-	{
-
-	}
-
-
-	/**
-	 * @see Diagrama de Classes.br.ufrrj.im.dominio.Entity#cadastrar(Diagrama de Classes.br.ufrrj.im.dominio.Entity)
-	 * 
-	 *  
-	 */
-	public void cadastrar(Entity entidade) {
-
-	}
-
-	/**
-	 * @see Diagrama de Classes.br.ufrrj.im.dominio.Entity#editar(Diagrama de Classes.br.ufrrj.im.dominio.Entity)
-	 */
-	public void editar(Entity novaEntidade) {
-
-	}
 
 }

@@ -1,15 +1,15 @@
 package model.vo;
 
-import model.entity.Perfil;
-import model.entity.Solicitacao;
+import model.entity.abstractClass.VO;
+import model.enumerado.PerfilEnum;
 
-public class UsuarioVO
+public class UsuarioVO extends VO
 {
+	private String login;
+	private PerfilEnum perfil;
+	private String senha;
 	private String nome;
-	private String matricula;
-	private Perfil perfil;
-	private Solicitacao solicitacao;
-	
+		
 	public String getNome()
 	{
 		return nome;
@@ -18,28 +18,29 @@ public class UsuarioVO
 	{
 		this.nome = nome;
 	}
-	public String getMatricula()
+	public String getSenha()
 	{
-		return matricula;
+		return senha;
 	}
-	public void setMatricula(String matricula)
+	public void setSenha(String senha)
 	{
-		this.matricula = matricula;
+		this.senha = senha;
 	}
-	public Perfil getPerfil()
+	public String getLogin()
+	{
+		return login;
+	}
+	public void setLogin(String login)
+	{
+		this.login = login;
+	}
+	
+	public PerfilEnum getPerfil()
 	{
 		return perfil;
 	}
-	public void setPerfil(Perfil perfil)
+	public void setPerfil(PerfilEnum perfil)
 	{
 		this.perfil = perfil;
-	}
-	public Solicitacao getSolicitacao()
-	{
-		return solicitacao;
-	}
-	public void setSolicitacao(Solicitacao solicitacao)
-	{
-		this.solicitacao = solicitacao;
 	}
 }

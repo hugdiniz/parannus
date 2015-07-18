@@ -16,20 +16,12 @@ import model.service.ServiceHandler;
 import model.vo.SolicitacaoVO;
 
 @WebServlet("")
-public class AreaTrabalho extends HttpServlet
+public class AreaTrabalho extends Controller
 {	
 	private static final long serialVersionUID = 1L;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		action(request, response);
-	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{		
-		action(request, response);
-	}
-	private void action(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	protected void action(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		String acao = (String) request.getParameter("acaoListar");		
 		if (acao == null) acao = "";		

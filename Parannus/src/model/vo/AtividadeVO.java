@@ -3,14 +3,12 @@ package model.vo;
 import java.util.Date;
 
 import model.entity.Usuario;
-import model.enumerado.Status;
 
 public class AtividadeVO
 {
 	private Date dataCriacao;
 	private Date dataInicio;
 	private Date dataFim;
-	private Status status;
 	private Usuario usuario;
 	
 	
@@ -38,15 +36,7 @@ public class AtividadeVO
 	{
 		this.dataFim = dataFim;
 	}
-	public Status getStatus()
-	{
-		return status;
-	}
-	public void setStatus(Status status)
-	{
-		this.status = status;
-	}
-	public Usuario getUsuario()
+		public Usuario getUsuario()
 	{
 		return usuario;
 	}

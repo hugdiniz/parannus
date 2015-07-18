@@ -1,37 +1,15 @@
 package model.entity;
 
-import java.util.List;
-
 import model.entity.abstractClass.Entity;
 
 
 public class Objetivo extends Entity
 {
 
-	private String objetivo;
-
-	private Atividade atividade;
-
-
-	/**
-	 * @see Diagrama de Classes.br.ufrrj.im.dominio.Entity#cadastrar(Diagrama de Classes.br.ufrrj.im.dominio.Entity)
-	 * 
-	 *  
-	 */
-	public void cadastrar(Entity entidade)
+	private String objetivoNome;
+	public Objetivo(String objetivoNome)
 	{
-
-	}
-
-
-	
-
-	/**
-	 * @see Diagrama de Classes.br.ufrrj.im.dominio.Entity#editar(Diagrama de Classes.br.ufrrj.im.dominio.Entity)
-	 */
-	public void editar(Entity novaEntidade)
-	{
-
+		this.objetivoNome = objetivoNome;
 	}
 
 }

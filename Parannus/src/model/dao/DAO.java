@@ -65,7 +65,7 @@ public class DAO
 		Collection vars = new ArrayList();
 		if (e.getId() != null)
 		{
-			sql = "UPDATE "+tableName +" SET (id,valor) = (?,?);";
+			sql = "UPDATE "+tableName +" SET (id,valor) = (?,?) where id ="+e.getId()+";";
 			vars.add(e.getId());
 		}
 		else

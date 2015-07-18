@@ -9,8 +9,16 @@
         <ul class="nav nav-pills pull-right" style="margin-right: 8%; margin-top: 1%;">
           <li ><a href="/Parannus/">Área de Trabalho</a></li>
           <li><a href="/Parannus/ConsultarSolicitacao">Solicitação</a></li>
+          <li><span></span></li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">${usuarioNome} <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Deslogar</a></li>
+            </ul>
+          </li>
+          
         </ul>
-        <a class="muted" href="/Parannus/"><img alt="UFRRJ" style="width: 120px; margin-left: 5%; margin-top: 1%;" src="imagens/Parannus.png"></a>
+        <a class="muted" href="/Parannus/"><img alt="Parannus" style="width: 120px; margin-left: 5%; margin-top: 1%;" src="imagens/Parannus.png"></a>
       </div>
 
       <hr style="margin-top: 23px;">

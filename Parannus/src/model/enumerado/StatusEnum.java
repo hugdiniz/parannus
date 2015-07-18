@@ -1,5 +1,6 @@
 package model.enumerado;
-public enum Status {
+public enum StatusEnum
+{
 
 	CRIADO,
 
@@ -9,13 +10,13 @@ public enum Status {
 
 	CONCLUIDO,
 
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	ATRASADO,
 
 	CANCELADO;
-
+	
+	
+	public String toString() 
+	{
+		return this.name();		
+	};
 }

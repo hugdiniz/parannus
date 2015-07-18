@@ -5,8 +5,10 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 import model.dao.DAO;
+import model.entity.Objetivo;
 import model.entity.Solicitacao;
 import model.exception.ServiceException;
+import model.vo.ObjetivoVO;
 import model.vo.SolicitacaoVO;
 
 public class ServiceHandler 
@@ -17,7 +19,8 @@ public class ServiceHandler
 	
 	public static ServiceHandler getInstance()
 	{
-		if (serviceHandler == null) {
+		if (serviceHandler == null) 
+		{
 			serviceHandler = new ServiceHandler();
 		}
 		return serviceHandler;
@@ -62,8 +65,52 @@ public class ServiceHandler
 		catch (ClassNotFoundException | SQLException e)
 		{			
 			e.printStackTrace();
+			throw new ServiceException("erro.service.handler.manter.solicitacaos.dao.insertOrUpdate");
+		}
+	}
+	
+
+	public void manterObjetivo(Objetivo objetivo) throws ServiceException
+	{
+		try
+		{
+			DAO.getInstance().insertOrUpdate(objetivo);
+		}
+		catch (ClassNotFoundException | SQLException e)
+		{			
+			e.printStackTrace();
+			throw new ServiceException("erro.service.handler.manter.solicitacaos.dao.insertOrUpdate");
+		}
+	}
+	
+	public Collection recuperarObjetivos(ObjetivoVO objetivoVO) throws ServiceException
+	{
+		Collection objetivos = null;
+		try
+		{
+			objetivos = DAO.getInstance().search(objetivoVO, Objetivo.class);
+		}
+		catch (SQLException | ClassNotFoundException |NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+		{			
+			e.printStackTrace();
 			throw new ServiceException("erro.service.handler.recuperar.solicitacaos.dao.search");
 		}
+		return objetivos;
+		
+	}
+	
+	public Objetivo recuperarObjetivo(ObjetivoVO objetivoVO) throws ServiceException
+	{
+		Collection objetivos = null;
+		objetivos = recuperarObjetivos(objetivoVO);		
+		if (objetivos != null && !objetivos.isEmpty())
+		{
+			return (Objetivo) objetivos.iterator().next();
+		}
+		else
+		{
+			return null;
+		}	
 	}
 
 }

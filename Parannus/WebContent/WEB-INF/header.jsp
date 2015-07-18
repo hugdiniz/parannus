@@ -13,7 +13,7 @@
           <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">${usuarioNome} <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Deslogar</a></li>
+              <li><a href="/Parannus/DeslogarUsuario">Deslogar</a></li>
             </ul>
           </li>
           

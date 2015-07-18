@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+<style><jsp:include page="style.css"></jsp:include></style>
 <div class="container-narrow">
 
       <div class="masthead">
@@ -28,5 +28,5 @@
         <a class="muted" href="/Parannus/"><img alt="Parannus" style="width: 120px; margin-left: 5%; margin-top: 1%;" src="imagens/Parannus.png"></a>
       </div>
 
-      <hr style="margin-top: 23px;">
+      <hr class="header" style="margin-top: 23px;">
 </div>

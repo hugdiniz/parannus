@@ -13,8 +13,6 @@ import model.entity.abstractClass.Entity;
 import model.entity.abstractClass.VO;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sun.javafx.geom.AreaOp.AddOp;
 
 
 public class DAO

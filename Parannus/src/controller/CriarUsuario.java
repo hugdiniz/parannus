@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import model.entity.Usuario;
 import model.enumerado.PerfilEnum;
 import model.exception.LoginException;
 import model.exception.UsuarioException;
@@ -59,7 +58,6 @@ public class CriarUsuario extends Controller
 			request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 		}
 		
-		//request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
 		//request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 	}
 

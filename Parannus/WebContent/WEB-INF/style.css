@@ -1,4 +1,8 @@
-.camposConsulta{
-	box-shadow:0 5px 5px rgba(50, 50, 50, 0.75);
+.camposBotao{	
+	margin-right: 10%; margin-left: 10%;
+}
+
+.menuSecundario{
+	margin-left: 5%;
 }
 

@@ -54,6 +54,7 @@ public class ViewAdicionarSugestao
 		usuarioVO.setPerfil(PerfilEnum.GERENTE);
 		usuarioVO.setNome("Desenvolvedor");
 		LoginHandler.getInstance().criarUsuario(usuarioVO);
+		System.out.println("qualquer coisa ai");
 	}
 
 }

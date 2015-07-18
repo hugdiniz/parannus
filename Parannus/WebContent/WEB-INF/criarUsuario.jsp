@@ -27,22 +27,33 @@
 </div>
 
 <body>
-	<form action="CriarConsumidor" method="post">
+	<form action="CriarUsuario" method="post">
 		<div>
-		<input id="tipos" type="hidden" value='${tipos}'>
-		<input type="text" class="input-block-level" placeholder="nome">
-		<input type="text" class="input-block-level" placeholder="login">
-		<input type="password" class="input-block-level" placeholder="senha">
+		<table>
+ 			<tr>
+  			 <td><font face="verdana" color="#4682B4"> Nome:  </font></td>
+  			 <td><input type="text" class="input-block-level" placeholder="nome"> <br /></td>
+		    </tr>
+ 			<tr>
+  				 <td><font face="verdana" color="#4682B4"> Login: </font></td>
+   				 <td><input type="text" class="input-block-level" placeholder="login"> <br /></td>
+ 			</tr>
+ 			<tr>
+  				 <td><font face="verdana" color="#4682B4"> Senha: </font></td>
+   				 <td><input type="password" class="input-block-level" placeholder="senha"> <br /></td>
+ 			</tr>
+ 			<tr>
+  				 <td><font face="verdana" color="#4682B4"> Tipos:  </font></td>
+  				 <td><input id="tipos" type="hidden" value='${tipos}'><select id="perfilEnum" name ="perfil"> </select> <br /></td>
+			</table>
+	       <input class="btn btn-large btn-primary" style="margin-top: 2%;" type="submit" name="criar" value="Criar">
+	    </form>	
 			
 			
-		<select id="perfilEnum" name ="perfil">
+			
 		
-		</select>
 		
-		    	
-			
-			
-			
+		 			
 		</div>
 	</form>
 </body>

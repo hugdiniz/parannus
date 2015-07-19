@@ -53,9 +53,14 @@
 							<input type="text"  name="impacto" class="input-block-level" value="${solicitacao.impacto}">
 						</td>
 					</tr>				
-				</table>
+				</table>				
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#objetivoModal">Criar Objetivo</button>		
+				<fieldset>
+					<legend>Objetivos</legend>
+					
+					<span id="1Objetivo">Objetivo alcançado</span>
+				</fieldset>
 				<input class="btn btn-primary collapsed" type="submit" name="criar" value="Criar">
-				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#objetivoModal">Criar Objetivo</button>		
 			</div>
 			</form>
 		</div>

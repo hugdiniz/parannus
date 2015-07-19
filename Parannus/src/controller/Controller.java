@@ -52,4 +52,16 @@ public abstract class Controller extends HttpServlet
 		request.setAttribute("usuarioNome", nome);
 		request.setAttribute("perfil", usuario.getPerfil().name());
 	}
+	protected void adicionarMSGSucesso(HttpServletRequest request,String msg)
+	{
+		
+		request.setAttribute("tipoMSG", "Sucesso");		
+		request.setAttribute("msg",msg);
+	}
+	protected void adicionarMSGErro(HttpServletRequest request,String msg)
+	{
+		
+		request.setAttribute("tipoMSG", "Erro");		
+		request.setAttribute("msg",msg);
+	}
 }

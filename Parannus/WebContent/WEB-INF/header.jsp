@@ -10,6 +10,24 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <style><jsp:include page="style.css"></jsp:include></style>
+
+<div class="modal fade" id="modalMSG">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span class="modal-title">${tipoMSG}</span>
+      </div>
+      <div class="modal-body">
+        ${msg}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container-narrow">
 
       <div class="masthead">
@@ -28,9 +46,20 @@
             </ul>
           </li>
           
+          
+          
         </ul>
         <a class="muted" href="/Parannus/"><img alt="Parannus" style="width: 120px; margin-left: 5%; margin-top: 1%;" src="imagens/Parannus.png"></a>
       </div>
+      
+      <c:if test='${tipoMSG != null && tipoMSG != ""}'>
+      	<script>
+      	$(function ()
+		{
+			$("#modalMSG").modal("show");
+		});
+      	</script>
+	  </c:if>
 
       <hr class="header" style="margin-top: 23px;">
 </div>

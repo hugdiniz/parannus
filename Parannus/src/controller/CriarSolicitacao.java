@@ -46,6 +46,7 @@ public class CriarSolicitacao extends Controller
 				}
 				Solicitacao solicitacao = new Solicitacao(sugestao, impacto, tipo);
 				
+				adicionarMSGSucesso(request, "Adicionado com sucesso");
 				ServiceHandler.getInstance().manterSolicitacao(solicitacao);
 				request.getRequestDispatcher("ConsultarSolicitacao").forward(request,response);
 			}

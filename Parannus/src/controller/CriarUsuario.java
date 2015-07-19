@@ -24,7 +24,9 @@ public class CriarUsuario extends Controller
 	{
 		Gson gson = new Gson();
 		String criar = (String) request.getParameter("criar");
+		String cancelar = (String) request.getParameter("cancelar");
 		request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
+		
 		
 		
 		if (criar != null && criar.contains("Criar"))

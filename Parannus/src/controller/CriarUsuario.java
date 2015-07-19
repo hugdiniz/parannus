@@ -24,6 +24,9 @@ public class CriarUsuario extends Controller
 	{
 		Gson gson = new Gson();
 		String criar = (String) request.getParameter("criar");
+		request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
+		
+		
 		if (criar != null && criar.contains("Criar"))
 		{
 			String login = (String) request.getParameter("login");
@@ -58,7 +61,7 @@ public class CriarUsuario extends Controller
 		}
 		
 		
-		request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
+		
 		//request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 	}
 

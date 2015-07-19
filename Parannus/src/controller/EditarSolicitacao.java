@@ -9,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
+import model.entity.Objetivo;
 import model.entity.Solicitacao;
 import model.exception.ServiceException;
 import model.exception.SolicitacaoException;
@@ -40,14 +43,18 @@ public class EditarSolicitacao extends Controller
 			{				
 				salvar(request, response);
 			}
+			else
+			{
+				request.getRequestDispatcher("WEB-INF/editarSolicitacao.jsp").forward(request,response);
+			}	
 			
 		} 
 		catch (ServiceException | SolicitacaoException e)
 		{
-			// TODO Auto-generated catch block
+			request.getRequestDispatcher("WEB-INF/editarSolicitacao.jsp").forward(request,response);
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("WEB-INF/editarSolicitacao.jsp").forward(request,response);
+		
 		
 		
 		
@@ -70,7 +77,7 @@ public class EditarSolicitacao extends Controller
 				
 				if (request.getParameter("id") != null  && !request.getParameter("id").trim().equals(""))
 				{
-					id = Long.getLong(request.getParameter("id").trim());
+					id = new Long(request.getParameter("id").trim());
 				}
 				if (request.getParameter("sugestao") != null  && !request.getParameter("sugestao").trim().equals(""))
 				{
@@ -84,7 +91,25 @@ public class EditarSolicitacao extends Controller
 				{
 					tipo = request.getParameter("tipo").trim();
 				}
-				Solicitacao solicitacao = new Solicitacao(sugestao, impacto, tipo);
+				
+				Solicitacao solicitacao = new Solicitacao(sugestao, impacto, tipo,id);
+				
+				if (request.getParameter("objetivos") != null  && !request.getParameter("objetivos").trim().equals(""))
+				{
+					Gson gson = new Gson();
+					Collection objetivoStrings = gson.fromJson(request.getParameter("objetivos").trim(),Collection.class);
+					for (String objetivoString : (Collection<String>)objetivoStrings)
+					{
+						try
+						{
+							solicitacao.addObjetivo(new Objetivo(objetivoString));
+						} catch (Exception e)
+						{
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				}				
 				
 				ServiceHandler.getInstance().manterSolicitacao(solicitacao);
 				request.getRequestDispatcher("ConsultarSolicitacao").forward(request,response);

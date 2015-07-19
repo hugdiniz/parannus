@@ -22,7 +22,7 @@ public class Solicitacao extends Entity
 
 	private String tipo;
 
-	private Collection idOjetivos;
+	private Collection idOjetivos = new ArrayList();
 	private Collection objetivos = null;
 
 	public Solicitacao(String sugestao,String impacto,String tipo)
@@ -30,7 +30,6 @@ public class Solicitacao extends Entity
 		this.sugestao = sugestao;
 		this.impacto = impacto;
 		this.tipo = tipo;
-		this.idOjetivos = new ArrayList();
 		//this.objetivo = objetivo;
 		
 	}
@@ -39,7 +38,6 @@ public class Solicitacao extends Entity
 		this.sugestao = sugestao;
 		this.impacto = impacto;
 		this.tipo = tipo;
-		this.idOjetivos = new ArrayList();
 		this.id = id;
 		
 	}
@@ -82,7 +80,11 @@ public class Solicitacao extends Entity
 			getObjetivos();
 		}
 		objetivos.add(objetivo);
-		idOjetivos.add(objetivo);
+		idOjetivos.add(objetivo.getId());
+	}
+	public void setIdOjetivos(Collection idOjetivos)
+	{
+		this.idOjetivos = idOjetivos;
 	}
 
 }

@@ -1,10 +1,35 @@
+<%@ include file="header.jsp" %>
+
 <script>
-function adicionarObjetivo(objetivo)
+$(function ()
 {
-	objetivo = JSON.parse('{"objetivoNome"="'+objetivo+'"}');
-	objetivos = JSON.parse($("#objetivosJSON").val());	
 	
+});
+
+function enviar()
+{	
+	var objetivos = "[";
+	var primeiro = true;
+	for(i=0;i<$('#divObjetivos span').size();i++)
+	{
+		objetivo = $('#divObjetivos span')[i].innerHTML;
+		if(primeiro)
+		{
+			objetivos = objetivos + objetivo;
+			primeiro = false;
+		}
+		else
+		{
+			objetivos = objetivos +","+ objetivo;
+		}	
+			
+	}
+	objetivos = objetivos +"]";
+	$("#inputObjetivos").val(objetivos);
+	alert(objetivos);
+	$("form").submit();
 }
+
 
 </script>
 
@@ -28,8 +53,7 @@ function adicionarObjetivo(objetivo)
 </div>
 
 
-<html>
-	<%@ include file="header.jsp" %>
+<html>	
 	<body>
 	
 		<div class="menuSecundario">
@@ -67,20 +91,20 @@ function adicionarObjetivo(objetivo)
 				</table>				
 						
 				
-				
-				<input id="objetivosJSON" type="hidden" name="objetivos" value="${solicitacao.objetivos}">
+				<input id="idObjetivo" type="hidden" name="id" value="${solicitacao.id}">
+				<input id="inputObjetivos" type="hidden" name="objetivos" value="">
 				<div class="menuSecundario" style="margin-top:2%;">
 					<span style="font-size:19px;">Objetivos</span>
 					<button type="button" class="btn btn-primary " style="margin-left: 80%; font-size:95%;" data-toggle="modal" data-target="#objetivoModal">Criar Objetivo</button>			
 					<hr style="margin-top: 7px;	">
-					<div>
+					<div id="divObjetivos">
 						<c:forEach var="objetivo" items="${solicitacao.objetivos}" >
-							<span id="${objetivo.id}Objetivo">${objetivo.objetivoNome}</span><a class="glyphicon glyphicon-minus retirarButton"></a>					    			
+							<span id="objetivoDescricao">${objetivo.objetivoNome}</span><a class="glyphicon glyphicon-minus retirarButton"></a><br>					    			
 						</c:forEach>
 					</div>					
 					
 				</div>
-				<input class="btn btn-primary collapsed" style="margin-top: 3%;" type="submit" name="criar" value="Criar">
+				<input class="btn btn-primary collapsed" style="margin-top: 3%;" onclick="enviar()" name="criar" value="Salvar">
 				<a class="btn btn-primary collapsed" style="margin-top: 3%;" href="/Parannus/ConsultarSolicitacao">Voltar</a>
 			</div>
 			</form>

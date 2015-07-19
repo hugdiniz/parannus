@@ -16,6 +16,7 @@
         <ul class="nav nav-pills pull-right" style="margin-right: 8%; margin-top: 1%;">
           <li ><a href="/Parannus/">Área de Trabalho</a></li>
           <li><a href="/Parannus/ConsultarSolicitacao">Solicitação</a></li>
+          <li><a href="/Parannus/ConsultarObjetivo">Objetivo</a></li>
           <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">${usuarioNome} <b class="caret"></b></a>
             <ul class="dropdown-menu">

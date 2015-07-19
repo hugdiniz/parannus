@@ -64,9 +64,14 @@ public class EditarSolicitacao extends Controller
 			if(buscar != null && !buscar.equals(""))
 			{				
 				String sugestao = null;
+				Long id = null;
 				String tipo = null;
 				String impacto = null;				
 				
+				if (request.getParameter("id") != null  && !request.getParameter("id").trim().equals(""))
+				{
+					id = Long.getLong(request.getParameter("id").trim());
+				}
 				if (request.getParameter("sugestao") != null  && !request.getParameter("sugestao").trim().equals(""))
 				{
 					sugestao = request.getParameter("sugestao").trim();

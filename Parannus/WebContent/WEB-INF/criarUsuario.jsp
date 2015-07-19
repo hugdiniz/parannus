@@ -47,8 +47,8 @@
   				 <td><font face="verdana" color="#4682B4"> Tipos:  </font></td>
   				 <td><input id="tipos" type="hidden" value='${tipos}'><select id="perfilEnum" name ="perfil"> </select> <br /></td>
 			</table>
-	       <input class="btn btn-large btn-primary" style="margin-top: 2%;" type="submit" name="criar" value="Criar">
-	       <a class="btn btn-large btn-primary" style="margin-top: 2%;"  href="/Parannus/" >Cancelar</a>
+	       <input class="btn btn-primary collapsed" style="margin-top: 2%;" type="submit" name="criar" value="Criar">
+	       <a class="btn btn-primary collapsed" style="margin-top: 2%;"  href="/Parannus/" >Cancelar</a>
 	   
 	   </div>
 	    </form>	

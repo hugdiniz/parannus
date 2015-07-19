@@ -24,10 +24,17 @@ public class CriarUsuario extends Controller
 	{
 		Gson gson = new Gson();
 		String criar = (String) request.getParameter("criar");
+		String cancelar = (String) request.getParameter("cancelar");
+		request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
+		
+		
+		
 		if (criar != null && criar.contains("Criar"))
 		{
 			String login = (String) request.getParameter("login");
+			System.out.println("peguei o login" + login);
 			String senha = (String) request.getParameter("senha");
+			System.out.println("peguei a senha" + senha);
 			String perfil = (String) request.getParameter("perfil");
 			String nome = (String) request.getParameter("nome");
 			UsuarioVO usuarioVO = new UsuarioVO();
@@ -40,6 +47,7 @@ public class CriarUsuario extends Controller
 			{
 				LoginHandler.getInstance().criarUsuario(usuarioVO);				
 				request.getRequestDispatcher("").forward(request,response);
+				
 				
 			} 
 			catch (LoginException e)
@@ -58,7 +66,7 @@ public class CriarUsuario extends Controller
 		}
 		
 		
-		request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
+		
 		//request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 	}
 

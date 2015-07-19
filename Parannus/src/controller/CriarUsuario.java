@@ -30,7 +30,9 @@ public class CriarUsuario extends Controller
 		if (criar != null && criar.contains("Criar"))
 		{
 			String login = (String) request.getParameter("login");
+			System.out.println("peguei o login" + login);
 			String senha = (String) request.getParameter("senha");
+			System.out.println("peguei a senha" + senha);
 			String perfil = (String) request.getParameter("perfil");
 			String nome = (String) request.getParameter("nome");
 			UsuarioVO usuarioVO = new UsuarioVO();
@@ -43,6 +45,7 @@ public class CriarUsuario extends Controller
 			{
 				LoginHandler.getInstance().criarUsuario(usuarioVO);				
 				request.getRequestDispatcher("").forward(request,response);
+				
 				
 			} 
 			catch (LoginException e)

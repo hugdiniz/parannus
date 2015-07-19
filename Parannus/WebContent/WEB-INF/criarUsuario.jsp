@@ -32,15 +32,15 @@
 		<table>
  			<tr>
   			 <td><font face="verdana" color="#4682B4"> Nome:  </font></td>
-  			 <td><input type="text" class="input-block-level" placeholder="nome"> <br /></td>
+  			 <td><input type="text" class="input-block-level" name="nome" placeholder="Nome"> <br /></td>
 		    </tr>
  			<tr>
   				 <td><font face="verdana" color="#4682B4"> Login: </font></td>
-   				 <td><input type="text" class="input-block-level" placeholder="login"> <br /></td>
+   				 <td><input type="text" class="input-block-level" name="login" placeholder="Login"> <br /></td>
  			</tr>
  			<tr>
   				 <td><font face="verdana" color="#4682B4"> Senha: </font></td>
-   				 <td><input type="password" class="input-block-level" placeholder="senha"> <br /></td>
+   				 <td><input type="password" class="input-block-level" name="senha" placeholder="Senha"> <br /></td>
  			</tr>
  			<tr>
   				 <td><font face="verdana" color="#4682B4"> Tipos:  </font></td>

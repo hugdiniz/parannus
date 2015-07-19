@@ -1,5 +1,3 @@
-
-
 <html>
 	<%@ include file="header.jsp" %>
 	<body>
@@ -59,17 +57,16 @@
 			          			<td>${solicitacao.sugestao}</td>
 			          			<td>${solicitacao.tipo}</td>
 			          			<td>${solicitacao.impacto}</td>
-			          			<td><a style="margin-left: 60%; "class="btn btn-primary collapsed" href="/Parannus/EditarSolicitacao?id=${solicitacao.id}" ><span aria-hidden="true" class="glyphicon glyphicon-cog"></span></a></td>
+			          			<c:if test='${perfil == "GERENTE"}'>
+   									<td><a style="margin-left: 60%; "class="btn btn-primary collapsed" href="/Parannus/EditarSolicitacao?id=${solicitacao.id}" ><span aria-hidden="true" class="glyphicon glyphicon-cog"></span></a></td>
+								</c:if>			          			
 			        		</tr>			    			
 						</c:forEach>
 					</tbody>
 				</table>
 			</c:if>
 
-		</div>
-	
-
-		
+		</div>	
 
 	</body>
 </html>

@@ -12,7 +12,7 @@ public abstract class Entity
 {
 	//public abstract void cadastrar(Entity entidade);
 	//public abstract void editar(Entity novaEntidade);
-	protected transient Long id;
+	protected Long id;
 	
 	public static Entity createEntity(String json,Long id,Class clas) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{

@@ -12,19 +12,52 @@ import javax.servlet.http.HttpServletResponse;
 import model.entity.Solicitacao;
 import model.exception.ServiceException;
 import model.service.ServiceHandler;
+import model.util.Util;
+import model.vo.SolicitacaoVO;
 
-@WebServlet("/CriarSolicitacao")
-public class CriarSolicitacao extends Controller
+@WebServlet("/EditarSolicitacao")
+public class EditarSolicitacao extends Controller
 {
 
 	@Override
 	protected void action(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
-	{		
+	{			
+		
+		Long id = Long.parseLong(request.getParameter("id"));		
+		
+		SolicitacaoVO solicitacaoVO = new SolicitacaoVO();
+		solicitacaoVO.setId(id);
+		try
+		{
+			Solicitacao solicitacao = ServiceHandler.getInstance().recuperarSolicitacao(solicitacaoVO);
+			
+			solicitacaoVO = (SolicitacaoVO) Util.transformEntityToVO(solicitacao, SolicitacaoVO.class);
+			request.setAttribute("solicitacao", solicitacaoVO);
+			String buscar = request.getParameter("salvar");		
+			if(buscar != null && !buscar.equals(""))
+			{				
+				salvar(request, response);
+			}
+			
+		} 
+		catch (ServiceException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		request.getRequestDispatcher("WEB-INF/editarSolicitacao.jsp").forward(request,response);
+		
+		
+		
+	}
+	
+	private void salvar(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
+	{
 		Collection solicitacaos = new ArrayList();
 		
 		try
 		{					
-			String buscar = request.getParameter("criar");
+			String buscar = request.getParameter("salvar");
 			
 			if(buscar != null && !buscar.equals(""))
 			{				
@@ -51,16 +84,19 @@ public class CriarSolicitacao extends Controller
 			}
 			else
 			{
-				request.getRequestDispatcher("WEB-INF/criarSolicitacao.jsp").forward(request,response);
+				request.getRequestDispatcher("WEB-INF/editarSolicitacao.jsp").forward(request,response);
 			}	
 			
 		}
 		catch (ServiceException e)
 		{
 			e.printStackTrace();
-			request.getRequestDispatcher("WEB-INF/criarSolicitacao.jsp").forward(request,response);
+			request.getRequestDispatcher("WEB-INF/editarSolicitacao.jsp").forward(request,response);
 		}
 		
+		
+		
+
 	}
 	
 }

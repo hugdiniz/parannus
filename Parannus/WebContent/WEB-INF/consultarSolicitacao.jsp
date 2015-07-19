@@ -6,7 +6,7 @@
 	
 		<div class="menuSecundario">
 			<span style="font-size:20px;">Consulta Solicitação</span>
-			<a style="margin-left: 60%; "class="btn btn-primary collapsed" href="/Parannus/CriarSolicitacao" >Criar Solicitação</a>
+			<a class="btn btn-primary collapsed pull-right" href="/Parannus/CriarSolicitacao" >Criar Solicitação</a>
 		<hr style="margin-top: 7px;	">
 		</div>								
 		<div class="camposBotao">
@@ -50,7 +50,6 @@
 			          	<th>Sugestão</th>
 			          	<th>Tipo da Solicitação</th>
 			          	<th>Impacto</th>
-			          	<th>Editar</th>
 			        	</tr>
 			      	</thead>
 			    	<tbody>
@@ -59,6 +58,7 @@
 			          			<td>${solicitacao.sugestao}</td>
 			          			<td>${solicitacao.tipo}</td>
 			          			<td>${solicitacao.impacto}</td>
+			          			<td><a style="margin-left: 60%; "class="btn btn-primary collapsed" href="/Parannus/EditarSolicitacao?id=${solicitacao.id}" ><span aria-hidden="true" class="glyphicon glyphicon-cog"></span></a></td>
 			        		</tr>			    			
 						</c:forEach>
 					</tbody>

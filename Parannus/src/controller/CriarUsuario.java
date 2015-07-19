@@ -38,8 +38,7 @@ public class CriarUsuario extends Controller
 			
 			try
 			{
-				LoginHandler.getInstance().criarUsuario(usuarioVO);
-				
+				LoginHandler.getInstance().criarUsuario(usuarioVO);				
 				request.getRequestDispatcher("").forward(request,response);
 				
 			} 
@@ -47,8 +46,8 @@ public class CriarUsuario extends Controller
 			{				
 				e.printStackTrace();
 				request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
-			} catch (UsuarioException e) {
-				// TODO Auto-generated catch block
+			} catch (UsuarioException e) 
+			{				
 				e.printStackTrace();
 				request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 			}
@@ -58,6 +57,7 @@ public class CriarUsuario extends Controller
 			request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 		}
 		
+		request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
 		//request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 	}
 

@@ -35,7 +35,10 @@
 						</td>
 					</tr>				
 				</table>
-				<input class="btn btn-primary collapsed" type="submit" name="criar" value="Criar">		
+				<div style="margin-top: 3%;">
+					<input class="btn btn-primary collapsed" type="submit" name="criar" value="Criar">
+					<a class="btn btn-primary collapsed" href="/Parannus/ConsultarSolicitacao">Voltar</a>	
+				</div>	
 			</div>
 			</form>
 		</div>

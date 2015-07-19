@@ -1,5 +1,7 @@
 package model.vo;
 
+import java.util.Collection;
+
 import model.entity.abstractClass.*;
 
 public class SolicitacaoVO extends VO
@@ -7,9 +9,17 @@ public class SolicitacaoVO extends VO
 	private String sugestao = null;
 	private String impacto = null;
 	private String tipo = null;
+	private Collection objetivos = null;
 	
 	
-	
+	public Collection getObjetivos()
+	{
+		return objetivos;
+	}
+	public void setObjetivos(Collection objetivos)
+	{
+		this.objetivos = objetivos;
+	}
 	public String getSugestao()
 	{
 		return sugestao;

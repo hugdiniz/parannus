@@ -1,9 +1,29 @@
-.camposBotao{	
+.camposBotao
+{	
 	margin-right: 10%; margin-left: 10%;
 }
 
-.menuSecundario{
+.menuSecundario
+{
 	margin-left: 5%;
 	margin-right: 10%
 }
 
+
+.Table
+{
+    
+}
+
+.Row
+{
+    display: table-row;
+}
+
+.Cell
+{
+    display: table-cell;    
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 40%;
+}

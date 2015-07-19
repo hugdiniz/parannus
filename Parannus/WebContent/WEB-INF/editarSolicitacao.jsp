@@ -1,3 +1,7 @@
+<script>
+</script>
+
+
 <div class="modal fade" id="objetivoModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -54,13 +58,23 @@
 						</td>
 					</tr>				
 				</table>				
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#objetivoModal">Criar Objetivo</button>		
-				<fieldset>
-					<legend>Objetivos</legend>
+						
+				
+				
+				<input type="hidden" value="${solicitacao.objetivos}">
+				<div class="menuSecundario" style="margin-top:2%;">
+					<span style="font-size:19px;">Objetivos</span>
+					<button type="button" class="btn btn-primary " style="margin-left: 80%; font-size:95%;" data-toggle="modal" data-target="#objetivoModal">Criar Objetivo</button>			
+					<hr style="margin-top: 7px;	">
+					<div>
+						<c:forEach var="objetivo" items="${solicitacao.objetivos}" >
+							<span id="${objetivo.id}Objetivo">${objetivo.objetivoNome}</span>					    			
+						</c:forEach>
+					</div>					
 					
-					<span id="1Objetivo">Objetivo alcançado</span>
-				</fieldset>
-				<input class="btn btn-primary collapsed" type="submit" name="criar" value="Criar">
+				</div>
+				<input class="btn btn-primary collapsed" style="margin-top: 3%;" type="submit" name="criar" value="Criar">
+				<a class="btn btn-primary collapsed" style="margin-top: 3%;" href="/Parannus/ConsultarSolicitacao">Voltar</a>
 			</div>
 			</form>
 		</div>

@@ -11,33 +11,34 @@
 		</div>								
 		<div class="camposBotao">
 			<form action="ConsultarSolicitacao" method="post">
-			<div>	
-				<table>
-					<tr>
-						<td>
-							<span>Tipo da solicitação</span>		
-						</td>
-						<td>
-							<input type="text"  name="tipo" class="input-block-level"  placeholder="">	
-						</td>
-					</tr>
-						<tr>
-							<td>
-								<span>Sugestão</span>
-							</td>
-							<td>
-								<input type="text"  name="sugestao" class="input-block-level" ">
-							</td>
-						</tr>
-					<tr>
-						<td>
-							<span>Impacto</span>
-						</td>
-						<td>
-							<input type="text"  name="impacto" class="input-block-level">
-						</td>
-					</tr>				
-				</table>
+			<div>					
+				<div class="Table">				    
+				    <div class="Row">
+				        <div class="Cell">
+				            <span>Tipo da solicitação</span>
+				        </div>
+				        <div class="Cell">
+				            <input type="text"  name="tipo" class="input-block-level"  placeholder="">
+				        </div>				        
+				    </div>
+				    <div class="Row">
+				        <div class="Cell">
+				            <span>Sugestão</span>
+				        </div>
+				        <div class="Cell">
+				            <input type="text"  name="sugestao" class="input-block-level" ">
+				        </div>				        
+				    </div>
+				    <div class="Row">
+				        <div class="Cell">
+				           <span>Impacto</span>
+				        </div>
+				        <div class="Cell">
+				            <input type="text"  name="impacto" class="input-block-level">
+				        </div>				        
+				    </div>
+				</div>
+				
 				<input class="btn btn-primary collapsed" type="submit" name="buscar" value="Buscar">		
 			</div>
 			</form>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.entity.Solicitacao;
 import model.exception.ServiceException;
+import model.exception.SolicitacaoException;
 import model.service.ServiceHandler;
 import model.util.Util;
 import model.vo.SolicitacaoVO;
@@ -30,6 +31,7 @@ public class EditarSolicitacao extends Controller
 		try
 		{
 			Solicitacao solicitacao = ServiceHandler.getInstance().recuperarSolicitacao(solicitacaoVO);
+			solicitacao.getObjetivos();
 			
 			solicitacaoVO = (SolicitacaoVO) Util.transformEntityToVO(solicitacao, SolicitacaoVO.class);
 			request.setAttribute("solicitacao", solicitacaoVO);
@@ -40,7 +42,7 @@ public class EditarSolicitacao extends Controller
 			}
 			
 		} 
-		catch (ServiceException e)
+		catch (ServiceException | SolicitacaoException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();

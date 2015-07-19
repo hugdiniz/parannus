@@ -1,4 +1,11 @@
 <script>
+function adicionarObjetivo(objetivo)
+{
+	objetivo = JSON.parse('{"objetivoNome"="'+objetivo+'"}');
+	objetivos = JSON.parse($("#objetivosJSON").val());	
+	
+}
+
 </script>
 
 
@@ -10,7 +17,7 @@
         <h4 class="modal-title">Criar Objetivo</h4>
       </div>
       <div class="modal-body">
-        <span>Objetivo: </span><input type="text" class="input-block-level">
+        <span>Objetivo: </span><input id="inputModalObjetivo" type="text" class="input-block-level">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -61,14 +68,14 @@
 						
 				
 				
-				<input type="hidden" value="${solicitacao.objetivos}">
+				<input id="objetivosJSON" type="hidden" name="objetivos" value="${solicitacao.objetivos}">
 				<div class="menuSecundario" style="margin-top:2%;">
 					<span style="font-size:19px;">Objetivos</span>
 					<button type="button" class="btn btn-primary " style="margin-left: 80%; font-size:95%;" data-toggle="modal" data-target="#objetivoModal">Criar Objetivo</button>			
 					<hr style="margin-top: 7px;	">
 					<div>
 						<c:forEach var="objetivo" items="${solicitacao.objetivos}" >
-							<span id="${objetivo.id}Objetivo">${objetivo.objetivoNome}</span>					    			
+							<span id="${objetivo.id}Objetivo">${objetivo.objetivoNome}</span><a class="glyphicon glyphicon-minus retirarButton"></a>					    			
 						</c:forEach>
 					</div>					
 					

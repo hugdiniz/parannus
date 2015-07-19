@@ -57,6 +57,7 @@ public class CriarUsuario extends Controller
 			request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 		}
 		
+		
 		request.setAttribute("tipos", gson.toJson(PerfilEnum.valores()));
 		//request.getRequestDispatcher("WEB-INF/criarUsuario.jsp").forward(request,response);
 	}

@@ -5,50 +5,22 @@
 <%@ include file="header.jsp" %>
 <body>
   
-  <!--  <div class="menuSecundario">
-			<span style="font-size:20px;">Consulta Solicitação</span>
-			<a class="btn btn-primary collapsed pull-right" href="/Parannus/Criar" >Criar Solicitação</a>
+  <div class="menuSecundario">
+			<span style="font-size:20px;">Consulta Objetivo</span>
 		<hr style="margin-top: 7px;	">
-		</div>-->								
+		</div>								
 		<div class="camposBotao">
-			<form action="ConsultarSolicitacao" method="post">
-			<div>					
-				<div class="Table">				    
-				    <div class="Row">
-				        <div class="Cell">
-				            <span>Descrição</span>
-				        </div>
-				        <div class="Cell">
-				            <input type="text"  name="tipo" class="input-block-level"  placeholder="">
-				        </div>				        
-				    </div>
-				</div>	
-				<input class="btn btn-primary collapsed" type="submit" name="buscar" value="Buscar">		
+			<form action="ConsultarObjetivo" method="post">
+			<div>
+			<table>
+ 			<tr><br>
+  			 <td><font face="verdana" color="#4682B4"> Descricao:  </font></td>
+  			 <td><input type="text" class="input-block-level" name="descricao" ></td>
+		    </tr>
+			</table><br><br>
+			<input class="btn btn-primary collapsed" type="submit" name="buscar" value="Buscar">
 			</div>
-			</form>
-			
-			<c:if test='${!empty objetivos'>
-				<table class="table">
-	      			<caption>Resultado da Consulta</caption>
-					<thead>
-			        	<tr>		          
-			          	<th>Objetivo</th>
-			          	</tr>
-			      	</thead>
-			    	<tbody>
-						<c:forEach var="solicitacao" items="${objetivos}" >
-							<tr>          
-			          			<td>${objetivo.descricao}</td>
-			          		<!-- 	<td><a style="margin-left: 60%; "class="btn btn-primary collapsed" href="/Parannus/EditarObjetivo?id=${objetivo.id}" ><span aria-hidden="true" class="glyphicon glyphicon-cog"></span></a></td>
-			        	 -->	</tr>			    			
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-
-		</div>
-	
-
-		
+			</div>
+			</form>			
 </body>
 </html>

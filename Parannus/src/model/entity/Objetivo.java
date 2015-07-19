@@ -11,5 +11,9 @@ public class Objetivo extends Entity
 	{
 		this.objetivoNome = objetivoNome;
 	}
+	public String getObjetivoNome()
+	{
+		return objetivoNome;
+	}
 
 }

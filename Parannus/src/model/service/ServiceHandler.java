@@ -2,12 +2,14 @@ package model.service;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import model.dao.DAO;
 import model.entity.Objetivo;
 import model.entity.Solicitacao;
 import model.exception.ServiceException;
+import model.exception.SolicitacaoException;
 import model.vo.ObjetivoVO;
 import model.vo.SolicitacaoVO;
 
@@ -58,6 +60,24 @@ public class ServiceHandler
 	
 	public void manterSolicitacao(Solicitacao solicitacao) throws ServiceException
 	{
+		try
+		{
+			Collection idObjetivos = new ArrayList();
+			for (Objetivo objetivo : (Collection<Objetivo>)solicitacao.getObjetivos())
+			{
+				manterObjetivo(objetivo);
+				ObjetivoVO objetivoVO = new ObjetivoVO();
+				objetivoVO.setObjetivoNome(objetivo.getObjetivoNome());
+				Objetivo objetivoRecuperado = ServiceHandler.getInstance().recuperarObjetivo(objetivoVO);
+				idObjetivos.add(objetivoRecuperado.getId());
+			}
+			solicitacao.setIdOjetivos(idObjetivos);
+		}
+		catch (SolicitacaoException e1)
+		{
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		try
 		{
 			DAO.getInstance().insertOrUpdate(solicitacao);

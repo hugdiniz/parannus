@@ -19,15 +19,15 @@ import model.vo.ObjetivoVO;
 import model.vo.SolicitacaoVO;
 
 @WebServlet("/ConsultarObjetivo")
-public class ConsultarObjetivo extends Controller {
+public class ConsultarObjetivo extends Controller 
+{
 
 	@Override
-	protected void action(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void action(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
 		// TODO Auto-generated method stub
 		
-		
-		Objetivo objetivos = null;
+		Collection objetivos = null;
 		Collection objetivosVOs = new ArrayList();
 		
 		try
@@ -44,11 +44,11 @@ public class ConsultarObjetivo extends Controller {
 				}
 				
 				
-				objetivos = ServiceHandler.getInstance().recuperarObjetivo(objetivoVO);
+				objetivos = ServiceHandler.getInstance().recuperarObjetivos(objetivoVO);
 
 				for (Objetivo objetivo : (Collection<Objetivo>)objetivos)
 				{
-					VO vo = Util.transformEntityToVO(objetivos,ObjetivoVO.class);
+					VO vo = Util.transformEntityToVO(objetivo,ObjetivoVO.class);
 					objetivosVOs.add(vo);
 				}			
 			}

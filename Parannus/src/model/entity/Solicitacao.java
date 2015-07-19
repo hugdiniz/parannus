@@ -34,6 +34,16 @@ public class Solicitacao extends Entity
 		//this.objetivo = objetivo;
 		
 	}
+	public Solicitacao(String sugestao,String impacto,String tipo,Long id)
+	{
+		this.sugestao = sugestao;
+		this.impacto = impacto;
+		this.tipo = tipo;
+		this.idOjetivos = new ArrayList();
+		this.id = id;
+		
+	}
+	
 	
 	public Solicitacao()
 	{

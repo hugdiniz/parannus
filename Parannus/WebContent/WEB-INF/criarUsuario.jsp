@@ -52,12 +52,5 @@
 	   
 	   </div>
 	    </form>	
-			
-			
-			
-		
-		
-		 			
-		</div>
-	</form>
+	    <%@ include file="rodape.jsp" %>		
 </body>

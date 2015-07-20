@@ -103,4 +103,5 @@ function enviar()
 			</form>
 		</div>	
 	</body>
+	<%@ include file="rodape.jsp" %>
 </html>

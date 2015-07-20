@@ -35,14 +35,29 @@ function enviar()
 	}
 	objetivos = objetivos +"]";
 	$("#inputObjetivos").val(objetivos);
-	alert(objetivos);
 	$("form").submit();
 }
 
 
 </script>
 
-
+<div class="modal fade" id="objetivoModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Criar Objetivo</h4>
+			</div>
+			<div class="modal-body">
+				<span>Objetivo: </span><input id="inputModalObjetivo" type="text" class="input-block-level">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" onclick="criarObjetivo($('#inputModalObjetivo').val())" data-dismiss="modal">Criar</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <html>	

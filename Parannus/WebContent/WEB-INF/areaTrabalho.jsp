@@ -23,6 +23,8 @@
 }
 </style>
 
+<html>
+<body>
 <div data-ride="carousel" class="carousel slide" id="myCarousel" style="margin-top: -30px;">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -32,7 +34,7 @@
       </ol>
       <div role="listbox" class="carousel-inner">
         <div class="item active">
-          <img alt="First slide" src="imagens/background.png" class="first-slide">
+          <img alt="First slide" src="imagens/background2.jpg" class="first-slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Melhoria</h1>
@@ -41,7 +43,7 @@
           </div>
         </div>
         <div class="item">
-          <img alt="Second slide" src="imagens/background.png" class="second-slide">
+          <img alt="Second slide" src="imagens/background2.jpg" class="second-slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Iniciativas de Melhoria de Processos</h1>
@@ -50,7 +52,7 @@
           </div>
         </div>
         <div class="item">
-          <img alt="Third slide" src="imagens/background.png" class="third-slide">
+          <img alt="Third slide" src="imagens/background2.jpg" class="third-slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Parannus</h1>
@@ -68,5 +70,6 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    
+    </body>
+</html>    
 <%@ include file="rodape.jsp" %>

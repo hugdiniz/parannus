@@ -28,5 +28,6 @@
 }
 body
 {
+	min-height:90%;
 	padding-bottom: 30px;
 }

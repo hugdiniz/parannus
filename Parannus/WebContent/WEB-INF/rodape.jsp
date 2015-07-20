@@ -8,14 +8,14 @@
 	    color: #337ab7;
 	    font-family: Verdana,arial,Helvetica,sans-serif;
 	    font-size: 13px;
-	    height: 75px;	   
+	    height: 25px;	   
 	    opacity: 0.8;	   
 	    text-align: right;
 	    width: 100%;
 	    z-index: 1;
 	    margin-top: 21%;	    
-	    position: absolute;
-		bottom: 22px;
+	    position: relative;
+		bottom: 25px;
 	}
 	.rodape-texto
 	{

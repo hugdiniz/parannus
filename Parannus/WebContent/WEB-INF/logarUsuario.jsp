@@ -3,6 +3,7 @@
 
 <style><jsp:include page="lib/bootstrap/css/bootstrap.min.css"></jsp:include></style>
 <script><jsp:include page="lib/bootstrap/js/bootstrap.min.js"></jsp:include></script>
+<script><jsp:include page="style.css"></jsp:include></script>
 
 <html>
 	<body>
@@ -17,4 +18,5 @@
 			
 	  </div> 
 	</body>
-</html>
+</html> 
+<%@ include file="rodape.jsp" %>		

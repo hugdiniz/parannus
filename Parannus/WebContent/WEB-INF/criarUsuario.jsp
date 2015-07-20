@@ -52,5 +52,6 @@
 	   
 	   </div>
 	    </form>	
-	    <%@ include file="rodape.jsp" %>		
+	   
 </body>
+ <%@ include file="rodape.jsp" %>		

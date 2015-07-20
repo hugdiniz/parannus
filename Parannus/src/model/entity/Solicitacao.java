@@ -86,5 +86,17 @@ public class Solicitacao extends Entity
 	{
 		this.idOjetivos = idOjetivos;
 	}
+	public String getTipo() 
+	{
+		return tipo;
+	}
+	public String getSugestao() 
+	{
+		return sugestao;
+	}
+	public String getImpacto() 
+	{
+		return impacto;
+	}
 
 }

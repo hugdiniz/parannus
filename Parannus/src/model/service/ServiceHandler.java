@@ -8,6 +8,7 @@ import java.util.Collection;
 import model.dao.DAO;
 import model.entity.Objetivo;
 import model.entity.Solicitacao;
+import model.entity.Usuario;
 import model.exception.ServiceException;
 import model.exception.SolicitacaoException;
 import model.vo.ObjetivoVO;
@@ -131,6 +132,20 @@ public class ServiceHandler
 		{
 			return null;
 		}	
+	}
+
+	public void manterUsuario(Usuario usuario) throws ServiceException
+	{
+		try
+		{
+			DAO.getInstance().insertOrUpdate(usuario);
+		}
+		catch (ClassNotFoundException | SQLException e)
+		{			
+			e.printStackTrace();
+			throw new ServiceException("erro.service.handler.manter.solicitacaos.dao.insertOrUpdate");
+		}
+		
 	}
 
 }

@@ -97,7 +97,7 @@ public class EditarSolicitacao extends Controller
 				if (request.getParameter("objetivos") != null  && !request.getParameter("objetivos").trim().equals(""))
 				{
 					Gson gson = new Gson();
-					Collection objetivoStrings = gson.fromJson(request.getParameter("objetivos").trim(),Collection.class);
+					Collection objetivoStrings = gson.fromJson("[\""+request.getParameter("objetivos").trim().replaceAll(",", "\",\"")+"\"]",Collection.class);
 					for (String objetivoString : (Collection<String>)objetivoStrings)
 					{
 						try

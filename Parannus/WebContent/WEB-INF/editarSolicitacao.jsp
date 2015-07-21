@@ -18,23 +18,18 @@ function retirarObjetivo(campo)
 
 function enviar()
 {	
-	var objetivos = "[";
+	var objetivos ;
 	var primeiro = true;
-	for(i=0;i<$('#divObjetivos span').size();i++)
+	if($('#divObjetivos span').size() > 0 )
 	{
-		objetivo = $('#divObjetivos span')[i].innerHTML;
-		if(primeiro)
+		var objetivos = [1];
+		for(i=0;i<$('#divObjetivos span').size();i++)
 		{
-			objetivos = objetivos + objetivo;
-			primeiro = false;
-		}
-		else
-		{
-			objetivos = objetivos +","+ objetivo;
-		}			
+			objetivos[i] = $('#divObjetivos span')[i].innerHTML;
+				
+		}		
+		$("#inputObjetivos").val(objetivos);
 	}
-	objetivos = objetivos +"]";
-	$("#inputObjetivos").val(objetivos);
 	$("form").submit();
 }
 

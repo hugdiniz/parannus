@@ -40,23 +40,26 @@ public class ViewAdicionarSugestao
 		
 		//System.out.println(DAO.getInstance().search(new SolicitacaoVO(), Solicitacao.class));
 		//System.out.println(Entity.createEntity(solicitacao.toString(), new Long(1), Solicitacao.class));
-		/*Objetivo objetivo =new Objetivo("Melhorar o treinamento");
+		Objetivo objetivo =new Objetivo("Melhorar o treinamento");
+		System.out.println(objetivo);
 		//Objetivo objetivo = ServiceHandler.getInstance().recuperarObjetivo(new ObjetivoVO());
-		ServiceHandler.getInstance().manterObjetivo(objetivo);
+		//ServiceHandler.getInstance().manterObjetivo(objetivo);
 		
-		SolicitacaoVO solicitacaoVO = new SolicitacaoVO();
-		solicitacaoVO.setId(new Long(1));
-		Solicitacao solicitacao = ServiceHandler.getInstance().recuperarSolicitacao(solicitacaoVO);
-		solicitacao.addObjetivo(objetivo);
-		ServiceHandler.getInstance().manterSolicitacao(solicitacao);
+		//SolicitacaoVO solicitacaoVO = new SolicitacaoVO();
+		//solicitacaoVO.setId(new Long(1));
+		//Solicitacao solicitacao = ServiceHandler.getInstance().recuperarSolicitacao(solicitacaoVO);
+		//solicitacao.addObjetivo(objetivo);
+		//ServiceHandler.getInstance().manterSolicitacao(solicitacao);
 		
-		UsuarioVO usuarioVO = new UsuarioVO();
-		usuarioVO.setSenha("focafoca");
-		usuarioVO.setLogin("admin");
-		usuarioVO.setPerfil(PerfilEnum.GERENTE);
-		usuarioVO.setNome("Desenvolvedor");
-		LoginHandler.getInstance().criarUsuario(usuarioVO);
-		System.out.println("qualquer coisa ai");*/
+		//UsuarioVO usuarioVO = new UsuarioVO();
+		//usuarioVO.setSenha("focafoca");
+		//usuarioVO.setLogin("admin");
+		//usuarioVO.setPerfil(PerfilEnum.GERENTE);
+		//usuarioVO.setNome("Desenvolvedor");
+		//LoginHandler.getInstance().criarUsuario(usuarioVO);
+		//System.out.println("qualquer coisa ai");*/
+		
+		System.out.println(LoginHandler.getInstance().recuperarUsuario(new UsuarioVO()));
 	}
 
 }

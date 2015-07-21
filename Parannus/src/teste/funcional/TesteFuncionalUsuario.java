@@ -47,7 +47,7 @@ public class TesteFuncionalUsuario extends DBTestCase {
 		//remove coluna da tabela.
 		ITable filteredTable2 = DefaultColumnFilter.excludedColumnsTable(dadosNoBanco2, new String[]{"id"});
 
-		IDataSet dadosSetEsperado2 = new FlatXmlDataSetBuilder().build(new FileInputStream("/home/hugdiniz/git/parannus/Parannus/src/teste/funcional/dbUnit.xml"));
+		IDataSet dadosSetEsperado2 = new FlatXmlDataSetBuilder().build(new FileInputStream("src/teste/funcional/dbUnit.xml"));
 		ITable dadosEsperados2 = dadosSetEsperado2.getTable("usuario");
 
 		Assertion.assertEquals(dadosEsperados2, filteredTable2);
@@ -77,7 +77,7 @@ public class TesteFuncionalUsuario extends DBTestCase {
 	@Override
 	protected IDataSet getDataSet() throws Exception
 	{
-		bancoCarregado = new FlatXmlDataSetBuilder().build( new FileInputStream("/home/hugdiniz/git/parannus/Parannus/src/teste/funcional/dbUnit.xml"));
+		bancoCarregado = new FlatXmlDataSetBuilder().build( new FileInputStream("src/teste/funcional/dbUnit.xml"));
 		return bancoCarregado;
 	}
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
 <dataset>
-	<solicitacao valor='{"sugestao":"Melhoria na documentação","impacto":"Alto","tipo":"Melhoria","idOjetivos":[],"objetivos":[]}'/>	
+	<solicitacao valor='{"sugestao":"Melhoria na documentação","impacto":"Alto","tipo":"Melhoria","idOjetivos":[],"objetivos":[]}'/>
+	<objetivo valor='{"objetivoNome":"Melhorar caso de uso"}'/>
+	<usuario valor='{"nome":"Claudio Silva","login":"Claudio","senha":"Parannus123","perfil":"GERENTE"}'/>		
 </dataset>
